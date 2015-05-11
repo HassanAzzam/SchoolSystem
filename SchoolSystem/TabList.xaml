@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="SchoolSystem.TabList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchoolSystem"
+             mc:Ignorable="d" 
+             d:DesignHeight="90" d:DesignWidth="1000">
+    <Grid>
+        <Rectangle Fill="White" Height="90" VerticalAlignment="Top"/>
+        <Rectangle Name="Highlighter" Fill="#FF1F1F1F" Height="90" VerticalAlignment="Top" HorizontalAlignment="Left" Width="381"/>
+
+        <Rectangle Name="Plus1" Fill="White" HorizontalAlignment="Left" Margin="29,40,0,0" Width="45" Height="15" VerticalAlignment="Top"/>
+        <Rectangle Name="Plus2" Fill="White" HorizontalAlignment="Left" Height="15" Margin="29,40,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <TextBlock x:Name="AddButton" HorizontalAlignment="Left" Height="90" TextWrapping="Wrap" Text="   Add Student" VerticalAlignment="Top" Width="376" FontSize="40" Foreground="White" TextAlignment="Center" Background="{x:Null}"   MouseDown="Tab_Click" Padding="0,18,0,0" FontWeight="Light"/>
+        <Rectangle Name="Lens1" Fill="#FF1F1F1F" HorizontalAlignment="Left" Height="8" Margin="421,60,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="57.645"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Ellipse  Name="Lens2" Fill="White" HorizontalAlignment="Left" Height="45" Margin="395,12,0,0" VerticalAlignment="Top" Width="45" Stroke="#FF1F1F1F" StrokeThickness="8"/>
+        <TextBlock x:Name="SearchButton" HorizontalAlignment="Left" Height="90" TextWrapping="Wrap" Text="      Search Students" VerticalAlignment="Top" Width="376" FontSize="40" Foreground="#FF1F1F1F" TextAlignment="Center"  Margin="381,0,0,0" MouseDown="Tab_Click" Padding="0,19,0,0" FontWeight="Light" />
+
+    </Grid>
+</UserControl>
