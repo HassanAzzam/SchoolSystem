@@ -8,17 +8,30 @@ namespace SchoolSystem
 {
     public class Student
     {
-        public static int Id = 0;
-        public int ID;
+        public string ID;
         public string Name, Year, Class;
+        const int Max_Len = 100;
 
-        public Student(string Name, string Year, string Class)
+        public Student(string Id, string Name, string Year, string Class)
         {
             this.Name = Name;
             this.Year = Year;
             this.Class = Class;
             this.ID = Id;
-            Student.Id++;
+        }
+        
+        static public bool operator==(Student A, Student B)
+        {
+            if (A.ID == B.ID && A.Name == B.Name && A.Year == B.Year && A.Class == B.Class)
+                return true;
+            return false;
+        }
+
+        static public bool operator !=(Student A, Student B)
+        {
+            if (A.ID != B.ID || A.Name != B.Name || A.Year != B.Year || A.Class != B.Class)
+                return true;
+            return false;
         }
     }
 }

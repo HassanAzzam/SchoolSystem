@@ -32,7 +32,8 @@ namespace SchoolSystem
     {
         Thickness SelectedTab_Margin;
         TextBlock SelectedTab;
-        Brush Grey;
+        public static Brush Grey;
+        public static Brush White = (Brush)new BrushConverter().ConvertFrom("#FFEAEAEA");
         double M;
         Thread Switcher;
 
@@ -47,13 +48,13 @@ namespace SchoolSystem
 
         private void Tab_Click(object sender, MouseButtonEventArgs e)
         {
+            TextBlock Tab = sender as TextBlock;
+            SelectedTab = Tab;
+            SelectedTab_Margin = SelectedTab.Margin;
+
             Switcher = new Thread(Animate);
             Switcher.Start();
 
-            TextBlock Tab = sender as TextBlock;
-
-            SelectedTab = Tab;
-            SelectedTab_Margin = SelectedTab.Margin;
 
             if (Tab.Name == "AddButton")
             {
@@ -65,6 +66,25 @@ namespace SchoolSystem
                 Lens2.Stroke = Grey;
                 Lens2.Fill = Brushes.White;
                 SearchButton.Foreground = Grey;
+
+                Plus21.Fill = Grey;
+                Plus22.Fill = Grey;
+                AddClass.Foreground = Grey;
+            }
+            else if (Tab.Name == "AddClass")
+            {
+                Plus1.Fill = Grey;
+                Plus2.Fill = Grey;
+                AddButton.Foreground = Grey;
+
+                Lens1.Fill = Grey;
+                Lens2.Stroke = Grey;
+                Lens2.Fill = Brushes.White;
+                SearchButton.Foreground = Grey;
+
+                Plus21.Fill = Brushes.White;
+                Plus22.Fill = Brushes.White;
+                AddClass.Foreground = Brushes.White;
             }
             else
             {
@@ -76,6 +96,10 @@ namespace SchoolSystem
                 Lens2.Stroke = Brushes.White;
                 Lens2.Fill = Grey;
                 SearchButton.Foreground = Brushes.White;
+
+                Plus21.Fill = Grey;
+                Plus22.Fill = Grey;
+                AddClass.Foreground = Grey;
             }
         }
 
@@ -84,7 +108,7 @@ namespace SchoolSystem
             while(M != SelectedTab_Margin.Left)
             {
                 M += (SelectedTab_Margin.Left - M) / 100;
-                Application.Current.Dispatcher.Invoke((Action)delegate
+                Application.Current.Dispatcher.Invoke(delegate
                  {
                      Highlighter.Margin = new Thickness(M, Highlighter.Margin.Top, Highlighter.Margin.Right, Highlighter.Margin.Bottom);
                  });

@@ -15,7 +15,9 @@ c:\users\hassan\documents\visual studio 2015\Projects\SchoolSystem\SchoolSystem\
 c:\users\hassan\documents\visual studio 2015\Projects\SchoolSystem\SchoolSystem\obj\Debug\TabList.g.cs
 c:\users\hassan\documents\visual studio 2015\Projects\SchoolSystem\SchoolSystem\obj\Debug\TabList.baml
 c:\users\hassan\documents\visual studio 2015\Projects\SchoolSystem\SchoolSystem\obj\Debug\GeneratedInternalTypeHelper.g.cs
-c:\users\hassan\documents\visual studio 2015\Projects\SchoolSystem\SchoolSystem\obj\Debug\InsertControl.g.cs
-c:\users\hassan\documents\visual studio 2015\Projects\SchoolSystem\SchoolSystem\obj\Debug\InsertControl.baml
 c:\users\hassan\documents\visual studio 2015\Projects\SchoolSystem\SchoolSystem\obj\Debug\SearchControl.g.cs
 c:\users\hassan\documents\visual studio 2015\Projects\SchoolSystem\SchoolSystem\obj\Debug\SearchControl.baml
+C:\Users\Hassan\Documents\Visual Studio 2015\Projects\SchoolSystem\SchoolSystem\obj\Debug\InsertClass.g.cs
+C:\Users\Hassan\Documents\Visual Studio 2015\Projects\SchoolSystem\SchoolSystem\obj\Debug\InsertStudent.g.cs
+C:\Users\Hassan\Documents\Visual Studio 2015\Projects\SchoolSystem\SchoolSystem\obj\Debug\InsertClass.baml
+C:\Users\Hassan\Documents\Visual Studio 2015\Projects\SchoolSystem\SchoolSystem\obj\Debug\InsertStudent.baml

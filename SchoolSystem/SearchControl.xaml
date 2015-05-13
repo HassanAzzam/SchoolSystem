@@ -21,12 +21,13 @@
         <ComboBox x:Name="SelectedName" SelectionChanged="Refresh" HorizontalAlignment="Left" Height="36" Margin="252,130,0,0" VerticalAlignment="Top" Width="188" FontSize="20" FontWeight="Light" />
         <ComboBox x:Name="SelectedYear" SelectionChanged="Refresh" HorizontalAlignment="Left" Height="36" Margin="252,294,0,0" VerticalAlignment="Top" Width="188" FontSize="20" FontWeight="Light"/>
         <ComboBox x:Name="SelectedClass" SelectionChanged="Refresh" HorizontalAlignment="Left" Height="36" Margin="252,382,0,0" VerticalAlignment="Top" Width="188" FontSize="20" FontWeight="Light"/>
-        <StackPanel HorizontalAlignment="Left" Height="403" Margin="2,73,0,0" VerticalAlignment="Top" Width="466" Grid.ColumnSpan="4" Grid.Column="1" Background="#FFEAEAEA">
-            <WrapPanel x:Name="DisplayList" FlowDirection="LeftToRight"/>
-        </StackPanel>
+        <ScrollViewer HorizontalAlignment="Left" Height="403" Margin="2,73,0,0" VerticalAlignment="Top" Width="475" Grid.ColumnSpan="4" Grid.Column="1" Background="#FFEAEAEA" ScrollViewer.VerticalScrollBarVisibility="Auto" >
+            <WrapPanel x:Name="DisplayList" FlowDirection="LeftToRight" MouseMove="DisplayList_MouseMove" MouseLeave="DisplayList_MouseLeave" MouseDown="DisplayList_MouseDown" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="466" Height="Auto" />
+        </ScrollViewer>
         <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="37,206,0,0" TextWrapping="Wrap" Text="Location" VerticalAlignment="Top" FontSize="30" FontWeight="Light" Width="147" Height="40"/>
         <ComboBox x:Name="SelectedLocation" SelectionChanged="Refresh" HorizontalAlignment="Left" Height="36" Margin="252,210,0,0" VerticalAlignment="Top" Width="188" FontSize="20" FontWeight="Light"/>
         <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="2,28,0,0" TextWrapping="Wrap" Text="   Id           Name          Year    Class   " VerticalAlignment="Top" FontSize="30" FontWeight="Light" Grid.ColumnSpan="4" Height="40" Width="469" Grid.Column="1"/>
+        
 
     </Grid>
 </UserControl>

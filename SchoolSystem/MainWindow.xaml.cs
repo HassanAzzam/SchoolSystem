@@ -21,8 +21,9 @@ namespace SchoolSystem
     /// 
     public enum MainWindowState
     {
-        InsertMenu,
-        SearchMenu
+        InsertStudent,
+        SearchMenu,
+        InsertClass
     }
     public partial class MainWindow : Window
     {
@@ -33,10 +34,10 @@ namespace SchoolSystem
         public MainWindow()
         {
             InitializeComponent();
-            Data = new DataLayer();
-            CurrentControl = new InsertControl(ref Data) { Margin = new Thickness(0, 0, 0, 0), };
+            Data = DataLayer.GetInstance();
+            CurrentControl = new InsertStudent() { Margin = new Thickness(0, 0, 0, 0), };
             MainGrid.Children.Add(CurrentControl);
-            State = MainWindowState.InsertMenu;
+            State = MainWindowState.InsertStudent;
         }
 
         private void Exit_Button(object sender, MouseButtonEventArgs e)
@@ -51,19 +52,44 @@ namespace SchoolSystem
             {
                 if(State == MainWindowState.SearchMenu)
                 {
-                    CurrentControl = new InsertControl(ref Data) { Margin = new Thickness(0, 0, 0, 0), };
+                    CurrentControl = new InsertStudent() { Margin = new Thickness(0, 0, 0, 0), };
                     MainGrid.Children.Add(CurrentControl);
-                    State = MainWindowState.InsertMenu;
                 }
+                else if (State == MainWindowState.InsertClass)
+                {
+                    CurrentControl = new InsertStudent() { Margin = new Thickness(0, 0, 0, 0), };
+                    MainGrid.Children.Add(CurrentControl);
+                }
+                State = MainWindowState.InsertStudent;
+            }
+            else if (CurrentClickedTab == "AddClass")
+            {
+                if (State == MainWindowState.SearchMenu)
+                {
+                    CurrentControl = new InsertClass() { Margin = new Thickness(0, 0, 0, 0), };
+                    MainGrid.Children.Add(CurrentControl);
+                }
+                else if (State == MainWindowState.InsertStudent)
+                {
+                    CurrentControl = new InsertClass() { Margin = new Thickness(0, 0, 0, 0), };
+                    MainGrid.Children.Add(CurrentControl);
+                }
+                State = MainWindowState.InsertClass;
+
             }
             else
             {
-                if (State == MainWindowState.InsertMenu)
+                if (State == MainWindowState.InsertStudent)
                 {
-                    CurrentControl = new SearchControl(ref Data) { Margin = new Thickness(0, 0, 0, 0), };
+                    CurrentControl = new SearchControl() { Margin = new Thickness(0, 0, 0, 0), };
                     MainGrid.Children.Add(CurrentControl);
-                    State = MainWindowState.SearchMenu;
                 }
+                else if (State == MainWindowState.InsertClass)
+                {
+                    CurrentControl = new SearchControl() { Margin = new Thickness(0, 0, 0, 0), };
+                    MainGrid.Children.Add(CurrentControl);
+                }
+                State = MainWindowState.SearchMenu;
             }
         }
     }

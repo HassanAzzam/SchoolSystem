@@ -55,10 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes.cs" />
     <Compile Include="DataLayer.cs" />
-    <Compile Include="InsertControl.xaml.cs">
-      <DependentUpon>InsertControl.xaml</DependentUpon>
+    <Compile Include="InsertClass.xaml.cs">
+      <DependentUpon>InsertClass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InsertStudent.xaml.cs">
+      <DependentUpon>InsertStudent.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchControl.xaml.cs">
       <DependentUpon>SearchControl.xaml</DependentUpon>
@@ -67,7 +69,11 @@
     <Compile Include="TabList.xaml.cs">
       <DependentUpon>TabList.xaml</DependentUpon>
     </Compile>
-    <Page Include="InsertControl.xaml">
+    <Page Include="InsertClass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InsertStudent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Institute.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
